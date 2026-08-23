@@ -5,9 +5,9 @@ import imageComingSoon from '../../assets/images/imageComingSoon.jpg';
 
 
 const imageAlt = 'Anteprima del progetto in arrivo';
-const instagramUrl = 'https://instagram.com/';
-const facebookUrl = 'https://facebook.com/';
-const whatsappUrl = 'https://wa.me/';
+const instagramUrl = 'https://www.instagram.com/mc.chinesiologia?utm_source=qr&igsi=MWpqb3B5eW0wN3gwZA%3D%3D';
+// const facebookUrl = 'https://facebook.com/';
+const whatsappUrl = 'https://wa.me/393393223309';
 
 const ComingSoon: React.FC = () => {
   return (
@@ -43,12 +43,12 @@ const ComingSoon: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
-              aria-label="Seguici su Instagram"
+              aria-label="Seguimi su Instagram"
             >
               <FaInstagram />
             </a>
 
-            <a
+            {/* <a
               href={facebookUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -56,14 +56,14 @@ const ComingSoon: React.FC = () => {
               aria-label="Seguici su Facebook"
             >
               <FaFacebookF />
-            </a>
+            </a> */}
 
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
-              aria-label="Scrivici su WhatsApp"
+              aria-label="Scrivimi su WhatsApp"
             >
               <FaWhatsapp />
             </a>

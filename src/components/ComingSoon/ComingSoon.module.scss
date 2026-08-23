@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500&display=swap');
+
+// ---------------------------------------------------------------------------
+// Design tokens
+// ---------------------------------------------------------------------------
+$ink: #17181a;
+$paper: #f4f0e6;
+$brand-blue: #03379b;
+$brand-blue-light: #3a5fc4;
+$grey: #8c8c7f;
+
+$font-display: 'Plus Jakarta Sans', -apple-system, sans-serif;
+$font-body: 'Inter', -apple-system, sans-serif;
+
+// ---------------------------------------------------------------------------
+// Component
+// ---------------------------------------------------------------------------
+.comingSoon {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: $paper;
+}
+
+// --- Metà sinistra: foto ----------------------------------------------------
+.media {
+  position: relative;
+  flex: 0 0 50%;
+  max-width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(35%) contrast(1.05);
+}
+
+.mediaOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba($ink, 0.05) 0%, rgba($ink, 0.25) 100%),
+    linear-gradient(90deg, rgba($brand-blue, 0.16) 0%, transparent 35%);
+  pointer-events: none;
+}
+
+// --- Metà destra: contenuto -------------------------------------------------
+.content {
+  flex: 0 0 50%;
+  max-width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6vw;
+  box-sizing: border-box;
+  color: $ink;
+  background: $paper;
+}
+
+.inner {
+  width: 100%;
+  max-width: 460px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: $font-body;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $brand-blue;
+  margin-bottom: 1.75rem;
+}
+
+// Elemento firma: barra di accento colore brand
+.eyebrowStripe {
+  display: inline-block;
+  width: 34px;
+  height: 3px;
+  flex-shrink: 0;
+  background: $brand-blue;
+}
+
+.title {
+  font-family: $font-display;
+  font-weight: 800;
+  font-size: clamp(2.75rem, 6.5vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.5rem;
+  color: $brand-blue;
+}
+
+.subtitle {
+  font-family: $font-body;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba($ink, 0.65);
+  margin: 0 0 2.75rem;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba($ink, 0.2);
+  color: $ink;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: $brand-blue;
+    border-color: $brand-blue;
+    color: $paper;
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $brand-blue-light;
+    outline-offset: 3px;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Responsive: sotto i 900px il layout diventa verticale
+// ---------------------------------------------------------------------------
+@media (max-width: 900px) {
+  .comingSoon {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .media,
+  .content {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .media {
+    height: 42vh;
+  }
+
+  .content {
+    padding: 10vw 8vw 4rem;
+  }
+
+  .title {
+    font-size: clamp(2.6rem, 12vw, 3.6rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .socialLink {
+    transition: none;
+  }
+}

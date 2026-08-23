@@ -5,16 +5,18 @@ import About from "./components/About";
 import Prestazioni from "./components/Prestazioni";
 import Contatti from "./components/Contatti";
 import Footer from "./components/Footer";
+import ComingSoon from "./components/ComingSoon/ComingSoon";
 
 function App() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar />
       <Hero />
       <About />
       <Prestazioni />
       <Contatti />
-      <Footer />
+      <Footer /> */}
+      <ComingSoon />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import styles from './ComingSoon.module.scss';
 import imageComingSoon from '../../assets/images/imageComingSoon.jpg';
 
